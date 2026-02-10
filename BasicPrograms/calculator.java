@@ -1,15 +1,33 @@
 import java.util.Scanner;
 
-public class Calculator {
+class Calculator {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        double first = sc.nextDouble();
+        double second = sc.nextDouble();
+        String op = sc.next();
+        switch (op) {
+            case "+":
+                System.out.println("Result = " + (first + second));
+                break;
 
-        double num1 = input.nextDouble();
-        double num2 = input.nextDouble();
+            case "-":
+                System.out.println("Result = " + (first - second));
+                break;
 
-        System.out.println("Addition: " + (num1 + num2));
-        System.out.println("Subtraction: " + (num1 - num2));
-        System.out.println("Multiplication: " + (num1 * num2));
-        System.out.println("Division: " + (num1 / num2));
+            case "*":
+                System.out.println("Result = " + (first * second));
+                break;
+
+            case "/":
+                if (second != 0) {
+                    System.out.println("Result = " + (first / second));
+                } else {
+                    System.out.println("Division by zero is not allowed");
+                }
+                break;
+            default:
+                System.out.println("Invalid Operator");
+        }
     }
 }
